@@ -121,21 +121,11 @@ sudo mv composer.phar /usr/local/bin/composer
 
 echo -e "${COLOR_INFO}"
 echo "=============================="
-echo "= Installing Laravel         ="
-echo "=============================="
-echo -e "${COLOR_NONE}"
-
-wget http://laravel.com/laravel.phar
-sudo mv laravel.phar /usr/local/bin/laravel
-sudo chmod 755 /usr/local/bin/laravel
-
-echo -e "${COLOR_INFO}"
-echo "=============================="
 echo "= Creating New Laravel App   ="
 echo "=============================="
 echo -e "${COLOR_NONE}"
 cd /var/www
-laravel new laravel-webapp
+composer create-project laravel/laravel laravel-webapp --prefer-dist
 sudo chmod -R 777 /var/www/laravel-webapp/app/storage
 
 echo -e "${COLOR_INFO}"
